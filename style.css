@@ -1,0 +1,510 @@
+/* Enhanced Wedding Invitation Styles */
+
+* {
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: auto;
+    overflow-y: scroll;
+}
+
+/* Custom Scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar-thumb-wedding-rose::-webkit-scrollbar-thumb {
+    background-color: #b76e79;
+    border-radius: 10px;
+}
+
+.scrollbar-track-wedding-cream::-webkit-scrollbar-track {
+    background-color: #fdf6e3;
+}
+
+/* Enhanced Animations */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #f9a8d4, 0 0 10px #f472b6;
+        opacity: 0;
+    }
+    50% {
+        text-shadow: 0 0 20px #f472b6, 0 0 30px #ec4899, 0 0 40px #d4af37;
+        opacity: 1;
+    }
+    100% {
+        text-shadow: 0 0 5px #f9a8d4, 0 0 10px #f472b6;
+        opacity: 0.8;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    40% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes grow {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 90%;
+        opacity: 1;
+    }
+}
+
+@keyframes reveal {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Heart Floating Animation for Special Guest */
+.heart-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.float-heart {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    animation: floatUp 4.5s ease-in forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(-80vh) scale(1);
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Hero Section */
+.hero {
+    animation: landing 1.5s forwards;
+}
+
+@keyframes landing {
+    0% {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+}
+
+/* Section Spacing and Backgrounds */
+div.kosong2 {
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(254, 242, 242, 0), rgba(253, 246, 227, 1));
+}
+
+div.kosong3 {
+    position: absolute;
+    left: 0;
+    margin-top: -40px;
+    height: 200px;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(254, 242, 242, 0), rgba(253, 246, 227, 1));
+}
+
+/* Navigation Styles */
+.nav {
+    box-shadow: 1px -2px 27px -11px rgba(0, 0, 0, 0.30);
+    -webkit-box-shadow: 1px -2px 27px -11px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 1px -2px 27px -11px rgba(0, 0, 0, 0.30);
+}
+
+.nav-title {
+    fill: #475569;
+}
+
+.nav-title.putih {
+    fill: #F87171;
+}
+
+/* Scroll Animations */
+.flower, .flower2, .flower3, .flower4, .flower5 {
+    transform: scale(0);
+    transition: .5s;
+    opacity: 0;
+}
+
+.flower.muncul, .flower2.muncul, .flower3.muncul, .flower4.muncul, .flower5.muncul {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.title, .title2, .title3, .title4, .title5 {
+    transform: scale(1, 0);
+    transition: .5s;
+}
+
+.title.muncul, .title2.muncul, .title3.muncul, .title4.muncul, .title5.muncul {
+    transform: scale(1);
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.opening, .profiles, .profile-1, .profile-2, .dan, .dan2, .card1, .card2 {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: .5s;
+}
+
+.opening.muncul, .profiles.muncul, .profile-1.muncul, .profile-2.muncul, .dan.muncul, .dan2.muncul, .card1.muncul, .card2.muncul {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Navigation Active States */
+ul li a {
+    width: 120px;
+    height: 70px;
+    padding: 10px;
+    transition: .5s;
+    border-radius: 12px;
+}
+
+ul li a.active, ul li a.group.active {
+    background: linear-gradient(135deg, #b76e79, #800020);
+}
+
+ul li a.active span, ul li a.group.active span {
+    color: #fff;
+}
+
+ul li a.active svg, ul li a.group.active svg {
+    fill: #fff;
+}
+
+@media screen and (max-width: 639px) {
+    ul li a, ul li a.group {
+        width: 55px;
+        height: 70px;
+    }
+
+    ul li a span, ul li a.group span {
+        margin-left: -1005px;
+        visibility: hidden;
+        position: absolute;
+    }
+}
+
+/* Audio Player */
+.audio-player {
+    --player-button-width: 3em;
+    --sound-button-width: 2em;
+    --space: .5em;
+    width: 15rem;
+    height: 3rem;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    margin-top: 10px;
+}
+
+.player-button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    margin-right: 5px;
+    transition: transform 0.2s;
+}
+
+.player-button:hover {
+    transform: scale(1.1);
+}
+
+/* Petal Animation */
+.petal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.petal {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall linear infinite;
+    opacity: 0.85;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Wave Animations */
+.waves1, .waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+.waves1 {
+    bottom: 0;
+}
+
+.waves {
+    margin-bottom: -50px;
+}
+
+.parallax>use {
+    animation: moveForever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes moveForever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 340px) {
+    li a svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .bi-house-heart-fill {
+        width: 20px;
+        height: 20px;
+    }
+
+    li a span {
+        margin-left: -1005px;
+        visibility: hidden;
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 855px) {
+    .acara {
+        display: grid;
+    }
+
+    .card2 {
+        margin-top: 20px;
+    }
+}
+
+.card1, .card2 {
+    width: 400px;
+}
+
+@media screen and (max-width: 418px) {
+    .card1, .card2 {
+        width: 300px;
+        height: 230px;
+    }
+}
+
+@media screen and (max-width: 315px) {
+    .card1, .card2 {
+        width: 245px;
+        height: 230px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .card1, .card2 {
+        width: 230px;
+        height: 230px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 15px;
+    }
+}
+
+/* Section Height Adjustments */
+@media screen and (max-height: 850px) {
+    section#event {
+        height: 100%;
+    }
+}
+
+@media screen and (max-height: 670px) {
+    section#event {
+        height: 100%;
+    }
+
+    #letter {
+        padding-bottom: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .content {
+        height: 30vh;
+    }
+
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+}
+
+/* Enhanced Button Styles */
+.btn-open {
+    background: linear-gradient(135deg, #800020, #b76e79);
+    transition: all 0.3s ease;
+}
+
+.btn-open:hover {
+    background: linear-gradient(135deg, #b76e79, #800020);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(128, 0, 32, 0.3);
+}
+
+/* Wish Card Hover Effects */
+.hover\\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+.hover\\:shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Gradient Text */
+.text-gradient {
+    background: linear-gradient(135deg, #d4af37, #b76e79);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Loading Animation for Wishes */
+.wish-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
